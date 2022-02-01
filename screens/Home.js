@@ -5,7 +5,10 @@ import Header from '../components/Header';
 export default class App extends Component {
     goToBuzzerScreen = (buzzerColor) => {
         // switch screens
-        this.props.navigation.navigate("buzzer", { color: buzzerColor });
+        var textColor = "white";
+        if (buzzerColor === "yellow") textColor = "black";
+        
+        this.props.navigation.navigate("buzzer", { color: buzzerColor, txtColor: textColor });
     }
     render() {
         return (

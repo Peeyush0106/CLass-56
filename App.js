@@ -7,7 +7,7 @@ import Team_Buzzer from "./screens/Team_Buzzer";
 export default class App extends Component {
 	render() {
 		return (
-			<View>
+			<View style={styles.container}>
 				<AppContainer />
 			</View>
 		);

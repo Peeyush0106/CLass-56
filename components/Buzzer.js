@@ -13,7 +13,7 @@ export default class Buzzer extends Component {
 		return (
 			<View>
 				<TouchableOpacity style={[styles.buzzer, {backgroundColor: this.props.color}]}	onPress={this.buzz}>
-					<Text style={styles.press}>
+					<Text style={[styles.press, {color: this.props.txtColor}]}>
 						Press me!
 					</Text>
 				</TouchableOpacity>
@@ -36,6 +36,6 @@ const styles = StyleSheet.create({
 	press:{
 		fontSize: 20,
 		fontWeight: "bold",
-		marginTop: 75
+		marginTop: 85
 	}
 });
