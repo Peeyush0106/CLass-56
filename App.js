@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { createSwitchNavigator, createAppContainer } from 'react-navigation';
+import Home from "./screens/Home";
+import Team_Buzzer from "./screens/Team_Buzzer";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default class App extends Component {
+	render() {
+		return (
+			<View>
+				<AppContainer />
+			</View>
+		);
+	}
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+	container: {
+		marginTop: 30
+	}
 });
+
+var AppNavigator = createSwitchNavigator({
+	home: Home,
+	buzzer: Team_Buzzer
+});
+
+var AppContainer = createAppContainer(AppNavigator);
